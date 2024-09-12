@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+    .box {
+  border: 1px solid black;
+  padding: 10px;
+  width: 200px;
+  background-color: #f2f2f2;
+}
+
+.operator {
+  margin-right: 5px;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  border-radius: 50%;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+}
+
+.operator:hover {
+  background-color: #45a049;
+}
+
+.operator:active {
+  background-color: #3d8b40;
+}
+
+.plus-btn {
+  background-color: #ff9800;
+}
+
+.plus-btn:hover {
+  background-color: #f57c00;
+}
+
+.plus-btn:active {
+  background-color: #e65100;
+}
+
+.minus-btn {
+  background-color: #2196f3;
+}
+
+.minus-btn:hover {
+  background-color: #1976d2;
+}
+
+.minus-btn:active {
+  background-color: #1565c0;
+}
+
+.times-btn {
+  background-color: #ff5722;
+}
+
+.times-btn:hover {
+  background-color: #e64a19;
+}
+
+.times-btn:active {
+  background-color: #d84315;
+}
+
+.divide-btn {
+  background-color: #9c27b0;
+}
+
+.divide-btn:hover {
+  background-color: #7b1fa2;
+}
+
+.divide-btn:active {
+  background-color: #6a1b9a;
+}
+
+input, button, p {
+  margin-top: 5px;
+}
+    </style>
+<div class="box">
+    <input id="num1"/>
+
+<div id="operator_btns">
+  <button id="plus" class="operator" onclick="op='+'">+</button>
+  <button id="minus" class="operator" onclick="op='-'">-</button>
+  <button id="times" class="operator" onclick="op='*'">x</button>
+  <button id="divide" class="operator" onclick="op='/'">:</button>
+</div>
+
+<input id="num2"/>
+
+<button onclick=func()>=</button>
+
+<p id="result"></p>
+</div>
+
+
+<script>
+  var op; 
+  function func() {
+    var result;
+    var num1 = Number(document.getElementById("num1").value);
+    var num2 = Number(document.getElementById("num2").value);
+    switch (op) {
+      case '+':
+        result = num1 + num2;
+        break;
+      case '-':
+        result = num1 - num2;
+        break;
+      case '*':
+        result = num1 * num2;
+        break;
+      case '/':
+        if (num2) {
+          result = num1 / num2;
+        } else {
+          result = 'endlessly';
+        }
+        break;
+      default:
+        result = 'select operation';
+    }
+
+    document.getElementById("result").innerHTML = result;
+  }
+</script>
+
+</body>
+</html>
